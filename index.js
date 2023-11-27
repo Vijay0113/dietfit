@@ -32,7 +32,7 @@ app.set('port', process.env.PORT || 5000);
 
 // Home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Registration page
