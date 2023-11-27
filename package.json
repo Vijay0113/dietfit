@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js"
   },
+    "dependencies": {
     "@azure/storage-blob": "^12.17.0",
     "@azure/cosmos": "^4.0.0",
     "express": "^4.13.3",
