@@ -1,90 +1,42 @@
 const express = require('express');
-const sqlite3 = require('sqlite3');
+const bodyParser = require('body-parser');
 const path = require('path');
-const bcrypt = require('bcrypt'); // For password hashing
-const jwt = require('jsonwebtoken'); // For generating JWT tokens
+const { Sequelize, DataTypes } = require('sequelize');
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-const db = new sqlite3.Database('your-database-file.db'); // Change 'your-database-file.db' to your desired database file name
-
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
-app.use(express.json()); // Parse JSON bodies
-
-// Create tables if not exists
-db.run(`CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  email TEXT UNIQUE,
-  password TEXT
-)`);
-
-db.run(`CREATE TABLE IF NOT EXISTS delivery_details (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT,
-  address TEXT,
-  phone_number TEXT,
-  special_request TEXT
-)`);
-
-// Signup route
-app.post('/api/signup', async (req, res) => {
-  const { email, password } = req.body;
-
-  // Hash the password before storing it in the database
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  db.run('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword], (err) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-    res.json({ success: true, message: 'User registered successfully' });
-  });
+// SQLite setup
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: path.join(__dirname, 'database.sqlite'), // Change the database file path
 });
 
-// Login route
-app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-
-    if (!user) {
-      return res.json({ success: false, message: 'User not found' });
-    }
-
-    // Compare the provided password with the hashed password in the database
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (passwordMatch) {
-      // Generate a JWT token and send it in the response
-      const token = jwt.sign({ userId: user.id, email: user.email }, 'your-secret-key', { expiresIn: '1h' });
-      return res.json({ success: true, token });
-    } else {
-      return res.json({ success: false, message: 'Invalid password' });
-    }
-  });
+// Define the User model
+const User = sequelize.define('User', {
+  first_name: DataTypes.STRING,
+  last_name: DataTypes.STRING,
+  email: DataTypes.STRING,
+  phone: DataTypes.STRING,
+  password: DataTypes.STRING,
 });
 
-// Save delivery details route
-app.post('/api/save-delivery-details', (req, res) => {
-  const { name, address, phoneNumber, specialRequest } = req.body;
+// Sync the model with the database
+sequelize.sync();
 
-  db.run('INSERT INTO delivery_details (name, address, phone_number, special_request) VALUES (?, ?, ?, ?)',
-    [name, address, phoneNumber, specialRequest],
-    (err) => {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      res.json({ success: true, message: 'Delivery details saved successfully' });
-    }
-  );
+app.set('port', process.env.PORT || 5000);
+
+// Routes
+
+// Home page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
-// ... (remaining code)
-
-app.listen(app.get('port'), () => {
-  console.log(`Node app is running at localhost:${app.get('port')}`);
+app.get('/chat', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'chat.html'));
 });
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
