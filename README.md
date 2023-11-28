@@ -86,7 +86,6 @@ The project leverages the following Azure services:
 ![Screenshot (22)](https://github.com/Vijay0113/dietfit/assets/145474381/8d6d9ef6-d82c-4b70-a22b-02cec51d12be)
 ![Screenshot (23)](https://github.com/Vijay0113/dietfit/assets/145474381/1ef22a7e-51f7-4280-9e82-5ea71b245f28)
 ![Screenshot (25)](https://github.com/Vijay0113/dietfit/assets/145474381/fdf40e9c-5849-4192-8951-312d7f62d9d4)
-
 ![Screenshot (27)](https://github.com/Vijay0113/dietfit/assets/145474381/9ac466ff-57d4-4ba4-b6bf-e045079ccd3d)
 ![Screenshot (28)](https://github.com/Vijay0113/dietfit/assets/145474381/0d60df68-b328-4c74-99ab-aa678618e7fe)
 ![Screenshot (29)](https://github.com/Vijay0113/dietfit/assets/145474381/3a7764a2-47f4-406b-a045-b28b46fd23af)
@@ -96,9 +95,18 @@ The project leverages the following Azure services:
 ![Screenshot (34)](https://github.com/Vijay0113/dietfit/assets/145474381/b9df451d-8cb7-4610-84f9-9775b3d1d848)
 ![Screenshot (33)](https://github.com/Vijay0113/dietfit/assets/145474381/1046b514-60e8-46aa-a846-99794e8fc501)
 ![Screenshot (35)](https://github.com/Vijay0113/dietfit/assets/145474381/747788da-e9de-4161-b87f-b12e7336ea4f)
-
 ![Screenshot (36)](https://github.com/Vijay0113/dietfit/assets/145474381/8e9d761f-0f83-4162-a98a-7796951866fb)
-
+![Screenshot (49)](https://github.com/Vijay0113/dietfit/assets/145474381/6fd0c854-cef7-4412-8526-8e74c87a0e0c)
+![Screenshot (38)](https://github.com/Vijay0113/dietfit/assets/145474381/5bf82d84-60c1-4837-ad54-8812ae8225bc)
+![Screenshot (39)](https://github.com/Vijay0113/dietfit/assets/145474381/3ec7d206-80a4-4088-b87f-3412974016bc)
+![Screenshot (40)](https://github.com/Vijay0113/dietfit/assets/145474381/f99f8325-c106-4c05-ba5d-7932bdb50fec)
+![Screenshot (41)](https://github.com/Vijay0113/dietfit/assets/145474381/a2c431aa-a776-4e1c-89a4-88508e824003)
+![Screenshot (42)](https://github.com/Vijay0113/dietfit/assets/145474381/010e20c9-385d-4ce0-82fd-7228786af8ea)
+![Screenshot (43)](https://github.com/Vijay0113/dietfit/assets/145474381/692fc6b0-1d7c-4a7c-a1bf-e3184b8a6c85)
+![Screenshot (44)](https://github.com/Vijay0113/dietfit/assets/145474381/c5eae53f-bb4c-4129-9f6b-90cd32ed14b6)
+![Screenshot (45)](https://github.com/Vijay0113/dietfit/assets/145474381/5e20d52b-c243-42b8-8606-77f78ceaf382)
+![Screenshot (47)](https://github.com/Vijay0113/dietfit/assets/145474381/34f98d71-7559-4046-bdc9-c7f1fb9fef1d)
+![Screenshot (48)](https://github.com/Vijay0113/dietfit/assets/145474381/d4083c19-2136-4811-a70c-2fe737f23dd3)
 
 
 ## Demo Video
